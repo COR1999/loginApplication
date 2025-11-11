@@ -26,15 +26,16 @@ export default function HomePage() {
   }
 
   return (
-    <div className="flex min-h-screen items-center justify-center bg-zinc-50">
-      <div className="w-full max-w-2xl rounded-md bg-white p-8 shadow">
-        <h1 className="mb-4 text-2xl font-semibold">Welcome, {userName}</h1>
-        <p className="mb-6 text-zinc-600">You are signed in.</p>
+    <div className="flex min-h-screen items-center justify-center">
+      <div className="w-full max-w-2xl rounded-lg p-8 shadow-lg" style={{ backgroundColor: 'var(--card-bg)', color: 'var(--card-text)' }}>
+        <h1 className="mb-6 text-3xl font-bold">Welcome, {userName}! 👋</h1>
+        <p className="mb-8 text-lg opacity-80">You are successfully signed in to your account.</p>
         <button
           onClick={handleLogout}
-          className="rounded bg-black px-4 py-2 text-white"
+          className="rounded-md px-6 py-2.5 font-semibold text-white transition-opacity hover:opacity-90"
+          style={{ backgroundColor: '#2563eb' }}
         >
-          Log out
+          Log Out
         </button>
       </div>
     </div>

@@ -72,12 +72,12 @@ export default function LoginPage() {
   }
 
   return (
-    <div className="flex min-h-screen items-center justify-center bg-zinc-50">
-      <div className="w-full max-w-md rounded-md bg-white p-8 shadow">
-        <h1 className="mb-4 text-2xl font-semibold">
-          {isSignUp ? "Create account" : "Sign in"}
+    <div className="flex min-h-screen items-center justify-center">
+      <div className="w-full max-w-md rounded-lg p-8 shadow-lg" style={{ backgroundColor: 'var(--card-bg)', color: 'var(--card-text)' }}>
+        <h1 className="mb-6 text-3xl font-bold">
+          {isSignUp ? "Create Account" : "Sign In"}
         </h1>
-        <form onSubmit={handleSubmit} className="flex flex-col gap-3">
+        <form onSubmit={handleSubmit} className="flex flex-col gap-4">
           {isSignUp && (
             <>
               <input
@@ -85,10 +85,15 @@ export default function LoginPage() {
                 placeholder="Full name"
                 value={fullName}
                 onChange={(e) => setFullName(e.target.value)}
-                className="rounded border px-3 py-2"
+                className="rounded-md border px-4 py-2.5 transition-colors focus:outline-none focus:ring-2 focus:ring-blue-500"
+                style={{ 
+                  backgroundColor: 'var(--input-bg)', 
+                  color: 'var(--input-text)',
+                  borderColor: 'var(--input-border)'
+                }}
               />
               {fieldErrors.fullName && (
-                <div className="text-sm text-red-600">{fieldErrors.fullName}</div>
+                <div className="text-sm text-red-500 font-medium">{fieldErrors.fullName}</div>
               )}
             </>
           )}
@@ -99,10 +104,15 @@ export default function LoginPage() {
               placeholder="Email address"
               value={email}
               onChange={(e) => setEmail(e.target.value)}
-              className="rounded border px-3 py-2"
+              className="rounded-md border px-4 py-2.5 transition-colors focus:outline-none focus:ring-2 focus:ring-blue-500"
+              style={{ 
+                backgroundColor: 'var(--input-bg)', 
+                color: 'var(--input-text)',
+                borderColor: 'var(--input-border)'
+              }}
             />
             {fieldErrors.email && (
-              <div className="text-sm text-red-600">{fieldErrors.email}</div>
+              <div className="text-sm text-red-500 font-medium">{fieldErrors.email}</div>
             )}
           </>
           <>
@@ -112,29 +122,36 @@ export default function LoginPage() {
               placeholder="Password"
               value={password}
               onChange={(e) => setPassword(e.target.value)}
-              className="rounded border px-3 py-2"
+              className="rounded-md border px-4 py-2.5 transition-colors focus:outline-none focus:ring-2 focus:ring-blue-500"
+              style={{ 
+                backgroundColor: 'var(--input-bg)', 
+                color: 'var(--input-text)',
+                borderColor: 'var(--input-border)'
+              }}
             />
             {fieldErrors.password && (
-              <div className="text-sm text-red-600">{fieldErrors.password}</div>
+              <div className="text-sm text-red-500 font-medium">{fieldErrors.password}</div>
             )}
           </>
 
-          {error && <div className="text-sm text-red-600">{error}</div>}
+          {error && <div className="text-sm text-red-500 font-medium">{error}</div>}
 
           <button
             type="submit"
             disabled={loading}
-            className="mt-2 rounded bg-black px-4 py-2 text-white disabled:opacity-60"
+            className="mt-2 rounded-md px-4 py-2.5 font-semibold text-white transition-opacity hover:opacity-90 disabled:opacity-60"
+            style={{ backgroundColor: '#2563eb' }}
           >
-            {loading ? "Please wait..." : isSignUp ? "Sign up" : "Sign in"}
+            {loading ? "Please wait..." : isSignUp ? "Sign Up" : "Sign In"}
           </button>
 
           <button
             type="button"
             onClick={() => setIsSignUp((s) => !s)}
-            className="mt-2 text-sm text-zinc-600 underline"
+            className="mt-2 text-sm font-medium underline hover:opacity-80 transition-opacity"
+            style={{ color: 'var(--card-text)' }}
           >
-            {isSignUp ? "Already have an account? Sign in" : "Create an account"}
+            {isSignUp ? "Already have an account? Sign in" : "Don't have an account? Sign up"}
           </button>
         </form>
       </div>
