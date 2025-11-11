@@ -11,13 +11,6 @@
   --button-hover: #333333;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
 /* Dark mode using data-theme attribute */
 html[data-theme='dark'] {
   --background: #0a0a0a;
