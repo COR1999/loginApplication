@@ -25,14 +25,16 @@ export default function ThemeToggle() {
   if (isDark === null) return null;
 
   return (
-    <button
-      onClick={toggleTheme}
-      className="fixed top-4 right-4 px-4 py-2 rounded-md bg-gray-200 dark:bg-gray-800 text-gray-900 dark:text-gray-100 hover:bg-gray-300 dark:hover:bg-gray-700 transition-colors font-semibold"
-      aria-label="Toggle dark mode"
-      title={isDark ? "Switch to light mode" : "Switch to dark mode"}
-    >
-      {isDark ? '☀️' : '🌙'}
-    </button>
+
+      <button
+        onClick={toggleTheme}
+        className="fixed top-4 right-4 px-4 py-2 rounded-md bg-gray-200 dark:bg-gray-800 text-gray-900 dark:text-gray-100 hover:bg-gray-300 dark:hover:bg-gray-700 transition-colors font-semibold"
+        aria-label="Toggle dark mode"
+        title={isDark ? "Switch to light mode" : "Switch to dark mode"}
+      >
+        {isDark ? '☀️' : '🌙'}
+      </button>
+
   );
 }
 

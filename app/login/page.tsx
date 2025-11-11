@@ -1,10 +1,11 @@
 "use client";
-
 import { useEffect } from "react";
 import { useRouter } from "next/navigation";
 import { onAuthStateChanged, type User } from "firebase/auth";
 import { auth } from "../../lib/firebase";
 import LoginForm from "@/components/LoginForm";
+
+
 
 export default function LoginPage() {
   const router = useRouter();
@@ -22,3 +23,4 @@ export default function LoginPage() {
     </div>
   );
 }
+

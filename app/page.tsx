@@ -4,6 +4,8 @@ import { useEffect, useState } from "react";
 import { useRouter } from "next/navigation";
 import { onAuthStateChanged, type User } from "firebase/auth";
 import { auth } from "../lib/firebase";
+import ThemeToggle from "@/components/ThemeToggle";
+
 
 export default function RootPageRedirect() {
   const router = useRouter();
