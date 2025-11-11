@@ -11,8 +11,8 @@
   --button-hover: #333333;
 }
 
-/* Dark mode using data-theme attribute */
-html[data-theme='dark'] {
+/* Dark mode using 'dark' class */
+html.dark {
   --background: #0a0a0a;
   --foreground: #f0f0f0;
   --card-bg: #1a1a1a;
@@ -25,7 +25,7 @@ html[data-theme='dark'] {
 
 /* System preference fallback */
 @media (prefers-color-scheme: dark) {
-  html:not([data-theme]) {
+  html:not(.light):not(.dark) {
     --background: #0a0a0a;
     --foreground: #f0f0f0;
     --card-bg: #1a1a1a;
@@ -37,15 +37,19 @@ html[data-theme='dark'] {
   }
 }
 
+/* Apply the CSS variables - but DON'T set background on body */
 html,
 body {
   width: 100%;
   height: 100%;
   margin: 0;
   padding: 0;
-  background: var(--background);
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
-  transition: background 0.3s ease, color 0.3s ease;
+  transition: color 0.3s ease;
 }
 
+/* Only apply background to html, not body */
+html {
+  background: var(--background);
+}
