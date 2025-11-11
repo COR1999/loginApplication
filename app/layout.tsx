@@ -30,8 +30,9 @@ export default function RootLayout({
       >
         <main>
           {children}
-          <ThemeToggle />
         </main>
+        {/* Theme toggle appears on all pages */}
+        <ThemeToggle />
       </body>
     </html>
   );
